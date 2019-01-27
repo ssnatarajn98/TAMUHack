@@ -46,11 +46,20 @@
                     <div class="conatiner Title">
                         <h1 id="header">This is the upload page</h1>
                         <p>Please upload any files you want!!</p>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile">
+                            <input type="file" class="" id="exampleInputFile">
                             <div>
-                                <button type="submit">Submit</button>
+                                <button class="btn btn-default" type="submit">Submit</button>
+                            </div>
+                        </div> -->
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label id="label-fileip" class="custom-file-label" for="inputGroupFile01"></label>
                             </div>
                         </div>
                     </div>
