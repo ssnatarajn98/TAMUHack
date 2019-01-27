@@ -15,6 +15,9 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="css/decorator.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+
     <style>
         /* Set the size of the div element that contains the map */
         #map {
@@ -50,34 +53,48 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1 class="Title">Scoop</h1>
+                <h1 class="Title" id="main">Scoop</h1>
                 <p class="Title">This project was created by Jason, Eric, Arjit, and Sriram.</p>
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
 
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
                 
-                    <!--The div element for the map -->
-                    <div id="map"></div>
-                    <script>
-                      // Initialize and add the map
-                      function initMap() {
-                        // The location of CS
-                        var CS = { lat: 30.6280, lng: -96.3344 };
-                        // The map, centered at CS
-                        var map = new google.maps.Map(
-                          document.getElementById('map'), { zoom: 10, center: CS });
-                        // The marker, positioned at CS
-                        var marker = new google.maps.Marker({ position: CS, map: map });
-                      }
-                    </script>
-                    <!--Load the API from the specified URL
-                        * The async attribute allows the browser to render the page while the API loads
-                        * The key parameter will contain your own API key (which is not needed for this tutorial)
-                        * The callback parameter executes the initMap() function
-                        -->
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf_WEu98cPXsceuxsQ5Ag6FBJS9ewiGzw&callback=initMap">
-
-                    </script>
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="show.html">
+                                <img class="media-object im" src="img1.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Location 1</h4>
+                            85% Trash - 15% Recyclable
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="show.html">
+                                <img class="media-object im" src="img2.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                Location 2 <img src="https://img.icons8.com/metro/26/000000/recycle-sign.png">
+                            </h4>
+                            20% Trash - 80% Recyclable
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-left">
+                            <a href="show.html">
+                                <img class="media-object im" src="img3.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Location 3</h4>
+                            70% Trash - 30% Recyclable
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

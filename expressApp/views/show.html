@@ -56,10 +56,7 @@
             <div class="container-fluid">
                 <h1 class="Title">*Insert Name of Instance Here*</h1>
                 <h3 class="Title">*Insert Image*</h3>
-                <h3 class="Title">% Trash and % Recyclable</h3>
-
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-    
+                <h3 class="Title">% Trash and % Recyclable</h3>    
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
     
                 <!--The div element for the map -->
@@ -69,11 +66,16 @@
                     function initMap() {
                         // The location of CS
                         var CS = { lat: 30.6280, lng: -96.3344 };
+                        var Unihop = { lat: 30.622633, lng: -96.340576};
+                        var WelshSouthwest = { lat: 30.595423, lng: -96.323216};
                         // The map, centered at CS
                         var map = new google.maps.Map(
-                            document.getElementById('map'), { zoom: 10, center: CS });
+                            document.getElementById('map'), { zoom: 13, center: {lat: 30.618491, lng: -96.323451} });
                         // The marker, positioned at CS
                         var marker = new google.maps.Marker({ position: CS, map: map });
+                        var marker2 = new google.maps.Marker({ position: Unihop, map: map });
+                        var marker3 = new google.maps.Marker({ position: WelshSouthwest, map: map });
+
                     }
                 </script>
                 <!--Load the API from the specified URL
