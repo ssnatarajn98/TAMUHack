@@ -114,3 +114,8 @@ ul{
 .nudge{
     margin: 0 15%;
 }
+
+.rt{
+    right: 80px;
+    position: absolute;
+}
