@@ -55,14 +55,9 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>Scoop</h1>
-                <p>This project was created by Jason, Eric, Arjit, and Sriram.</p>
+                <h1 class="Title">Scoop</h1>
+                <p class="Title">This project was created by Jason, Eric, Arjit, and Sriram.</p>
                 <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-
-                <!-- Code for list -->
-                <% docs.forEach(function(item){ %>
-                  <h1><%= item %></h1>
-                <% }) %>
 
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
                 <div class="conatiner">
@@ -79,10 +74,10 @@
                       // Initialize and add the map
                       function initMap() {
                         // The location of Uluru
-                        var uluru = { lat: -25.344, lng: 131.036 };
+                        var uluru = { lat: 30.615011, lng: -96.342476 };
                         // The map, centered at Uluru
                         var map = new google.maps.Map(
-                          document.getElementById('map'), { zoom: 4, center: uluru });
+                          document.getElementById('map'), { zoom: 15, center: uluru });
                         // The marker, positioned at Uluru
                         var marker = new google.maps.Marker({ position: uluru, map: map });
                       }
