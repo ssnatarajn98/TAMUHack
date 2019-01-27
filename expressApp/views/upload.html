@@ -5,11 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Upload Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <!-- From the vendor folder -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Sidebar CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/decorator.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <h1>This is the upload page</h1>
+
+    <div id="wrapper">
+        <div id="background"></div>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="upload.html">Upload</a>
+                </li>
+                <li>
+                    <a href="stats.html">Stats</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                    <div class="conatiner Title">
+                        <h1 id="header" class="fnt custom">Upload Your Stuff</h1>
+                        <!-- <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" class="" id="exampleInputFile">
+                            <div>
+                                <button class="btn btn-default" type="submit">Submit</button>
+                            </div>
+                        </div> -->
+                        <div class="input-group custom">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label id="label-fileip" class="custom-file-label" for="inputGroupFile01"></label>
+                            </div>
+                        </div>
+                    </div>
+
+    
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+    
+                </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    
+    </div>
+    <!-- /#wrapper -->
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
     
 </body>
 </html>
