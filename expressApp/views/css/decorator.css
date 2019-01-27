@@ -102,3 +102,11 @@ ul{
 #menu-toggle{
     margin-left: 0px;
 }
+
+.fnt{
+    font-family: 'Major Mono Display', monospace;
+}
+
+.custom{
+    margin-bottom: 70px;
+}
