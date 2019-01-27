@@ -1,0 +1,12 @@
+     {
+        "ItemTypeId": 1,
+        "TypeName": "Type 1"
+      },
+      {
+        "ItemTypeId": 2,
+        "TypeName": "Type 2"
+      },
+      {
+        "ItemTypeId": 3,
+        "TypeName": "Type 3"
+      }
