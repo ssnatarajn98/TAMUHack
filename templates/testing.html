@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+
+
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  
+
+
+    <script>
+        //where angularjs part starts
+            angular.module('myApp', [])
+                .controller('HomeCtrl', function($scope, $http) {
+                    //scope.something can be though of as either a varibale that stores date 
+                    $scope.info = {};
+                    $scope.showAdd = true;
+                    $scope.addMachineError = false;
+                    $scope.updateModal = true;
+                    $scope.ErrorMessage = "";
+                    $scope.machines = [
+      {
+        "Id": 1,
+        "ItemName": "Image 1",
+        "ItemTypeId": 1,
+      },
+      {
+        "Id": 2,
+        "ItemName": "Image 2",
+        "ItemTypeId": 1,
+      },
+      {
+        "Id": 3,
+        "ItemName": "Image 3",
+        "ItemTypeId": 1,
+      },
+      {
+        "Id": 4,
+        "ItemName": "Image 4",
+        "ItemTypeId": 2,
+      }
+    ]
+   
+      //here scope that showlist is a just a javascript function that calls the getList endpoint that we created in the server.py
+                    $scope.showlist = function(){
+                        $http({
+                            method: 'POST',
+                            url: '/getList',
+    
+                        }).then(function(response) {
+                        //based on the output it either console log everything in json type or returns what the error was
+                            $scope.machines = response.data;
+                            console.log($scope.machines);
+                        }, function(error) {
+                            console.log(error);
+                        });
+                    }
+    
+                    $scope.addMachine = function(){
+                    //this add machine just calls the addMachine endpoint we created in server.py
+                    $scope.addMachineError = false;
+                    $scope.updateModal = true;
+                    $scope.ErrorMessage = "";
+                        $http({
+                            method: 'POST',
+                            url: '/addMachine',
+                            data: {info:$scope.info}
+                        }).then(function(response) {
+                            if (response.data.status=="ERROR"){
+                                console.debug(response.data.message);
+                                $scope.addMachineError = true;
+                                $scope.ErrorMessage = response.data.message;
+                            }
+                            else {
+                                alert(response.data.message)
+                                $scope.info = {}
+                            }
+                        }, function(error) {
+                            console.log(error);
+                        });
+                    }
+                    $scope.showlist();
+                    
+                })
+        </script>
+
+</head>
+
+<body ng-controller="HomeCtrl">
+    <div class="wrapper">
+        <div class="inputs" style="margin-left:700px;margin-top:500px">
+            <!--ng-model means that the values entered in the input box are 2 way binded to variable info, here info is a json type and info.image is a key -->
+                <input type="text" ng-model="info.location" id="a" placeholder="location" style="height: 40px;width:200px">  
+                <input type="text" ng-model="info.image" id="b" placeholder="image path"  style="height: 40px;width:200px">
+        </div>
+        <!--ng-click is almost synonmous to onclick in javascript-->
+        <div class="buttonsclass" style="margin-left:840px; margin-top:20px;">
+                <button id="btnAdd" ng-click="addMachine()" type="button" >Add pic</button>
+                <button id="btnGet" ng-click="showlist()" type="button" >GetList </button>
+        </div>
+    
+
+    </div>
+	
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

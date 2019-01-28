@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+.wrapper {
+    text-align: center;
+}
+
+#a {
+    position: absolute;
+    top: 40%;
+}
+#b{
+    position: absolute;
+    top: 35%;
+}
+
+#btnAdd {
+    position: absolute;
+    top: 30%;
+}
+
+#btnGet{
+    position: absolute;
+    top: 25%;
+
+}
